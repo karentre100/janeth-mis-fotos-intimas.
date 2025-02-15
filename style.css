@@ -1,0 +1,211 @@
+/* Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    position: relative;
+    overflow: hidden;
+}
+
+.fondo-decorativo {
+    position: fixed;
+    width: 200vw;
+    height: 200vh;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 20%, transparent 20%);
+    background-size: 30px 30px;
+    opacity: 0.15;
+    transform: rotate(15deg);
+    z-index: 0;
+}
+
+.contenedor-principal {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+}
+
+.tarjeta-verificacion {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.encabezado {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.icono-seguridad {
+    font-size: 4rem;
+    color: #ff69b4;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 6px rgba(255,105,180,0.2));
+}
+
+h1 {
+    color: #2d2d2d;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.leyenda-seguridad {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.grupo-input {
+    margin-bottom: 1.8rem;
+}
+
+label {
+    display: block;
+    color: #4a4a4a;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    padding-left: 0.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ffe6f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.9);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff85b8;
+    box-shadow: 0 0 0 3px rgba(255,133,184,0.2);
+    background: white;
+}
+
+.grupo-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.boton-verificacion {
+    width: 100%;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.boton-verificacion:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255,126,179,0.3);
+}
+
+.icono-boton {
+    font-size: 1.4rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.aviso-legal {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(255,245,245,0.8);
+    border-radius: 12px;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.icono-aviso {
+    font-size: 1.5rem;
+    color: #ff69b4;
+}
+
+.aviso-legal p {
+    color: #666;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+@keyframes animate-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.animate-bounce {
+    animation: animate-bounce 2s infinite;
+}
+
+/* Estilos adicionales para la página de verificación exitosa */
+.contador-tiempo {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.segundero-gigante {
+    font-size: 5em;
+    color: #ff0066;
+    font-weight: 800;
+    text-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    animation: pulse 1s infinite;
+    margin: 2rem 0;
+}
+
+.mensaje-error-impactante {
+    display: none;
+    font-size: 1.8em;
+    color: #ff4444;
+    background: rgba(255,255,255,0.9);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 3px solid #ff4444;
+    margin: 2rem auto;
+    max-width: 500px;
+    line-height: 1.4;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(255,68,68,0.2);
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes vibrar {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.vibrar {
+    animation: vibrar 0.5s;
+}
